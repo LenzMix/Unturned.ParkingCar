@@ -39,7 +39,7 @@ namespace SDParkingCar
 
             if (test1 == null)
             {
-                command.CommandText = "CREATE TABLE IF NOT EXISTS `" + _plugin.Configuration.Instance.mysqltable + "` (`id` int(11) NOT NULL AUTO_INCREMENT,`steamid` text, `carid` int(11) DEFAULT NULL,  `x` text,  `y` text,  `z` text,  `health` int(11) DEFAULT NULL, `gas` int(11) DEFAULT NULL,  `isTires` int(11) DEFAULT NULL,  `isActive` int(11) DEFAULT NULL,  `rx` text,  `ry` text,  `rz` text,  `rw` text,  `battery` int(11) DEFAULT NULL,  `name` text,  PRIMARY KEY(`id`));";
+                command.CommandText = "CREATE TABLE IF NOT EXISTS `" + _plugin.Configuration.Instance.mysqltable + "` (`id` int(11) NOT NULL AUTO_INCREMENT,`steamid` text, `carid` int(11) DEFAULT NULL,  `x` text,  `y` text,  `z` text,  `health` int(11) DEFAULT NULL, `gas` int(11) DEFAULT NULL,  `isTires` int(11) DEFAULT NULL,  `isActive` longint,  `rx` text,  `ry` text,  `rz` text,  `rw` text,  `battery` int(11) DEFAULT NULL,  `name` text,  PRIMARY KEY(`id`));";
                 command.ExecuteNonQuery();
             }
             command.CommandText = "show tables like '" + _plugin.Configuration.Instance.mysqltableitems + "'";

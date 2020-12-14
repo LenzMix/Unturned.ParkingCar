@@ -61,7 +61,7 @@ namespace SDParkingCar.Events
                 InteractableVehicle MyCar = VehicleManager.getVehicle(component.ActiveCar);
                 foreach (Plugin.CarInfo i in component.MyCars)
                 {
-                    if (i._isActive && i.IDcar == MyCar.id && component.ActiveCarID == i.id)
+                    if (i._isActive != uint.MaxValue && i.IDcar == MyCar.id && component.ActiveCarID == i.id)
                     {
                         i.x = MyCar.transform.position.x;
                         i.y = MyCar.transform.position.y;
@@ -73,7 +73,7 @@ namespace SDParkingCar.Events
                         i.Health = MyCar.health;
                         i.Battery = MyCar.batteryCharge;
                         i.Gas = MyCar.fuel;
-                        i._isActive = false;
+                        i._isActive = uint.MaxValue;
                         i.name = MyCar.asset.name;
 
 
@@ -129,7 +129,7 @@ namespace SDParkingCar.Events
                 InteractableVehicle MyCar = VehicleManager.getVehicle(component.ActiveCar);
                 foreach (Plugin.CarInfo i in component.MyCars)
                 {
-                    if (i._isActive && i.IDcar == MyCar.id && component.ActiveCarID == i.id)
+                    if (i._isActive != uint.MaxValue && i.IDcar == MyCar.id && component.ActiveCarID == i.id)
                     {
                         i.x = MyCar.transform.position.x;
                         i.y = MyCar.transform.position.y;
@@ -141,7 +141,7 @@ namespace SDParkingCar.Events
                         i.Health = MyCar.health;
                         i.Battery = MyCar.batteryCharge;
                         i.Gas = MyCar.fuel;
-                        i._isActive = true;
+                        i._isActive = MyCar.instanceID;
                         i.name = MyCar.asset.name;
 
 
@@ -231,7 +231,7 @@ namespace SDParkingCar.Events
                         (object) MyCar.instanceID,
                         (object) i.Battery
                     });
-                    i._isActive = true;
+                    i._isActive = MyCar.instanceID;
                     UnturnedChat.Say(player, Plugin.Instance.Translate("vehevac", new object[] { Convert.ToString(i.name) }), Color.yellow);
                     UnturnedChat.Say(player, Plugin.Instance.Translate("vehcoord", new object[0]), Color.yellow);
                     player.Player.quests.replicateSetMarker(true, MyCar.transform.position, Plugin.Instance.Translate("marker", new object[0]));
@@ -283,7 +283,7 @@ namespace SDParkingCar.Events
                         (object) MyCar.instanceID,
                         (object) i.Battery
                     });
-                    i._isActive = true;
+                    i._isActive = MyCar.instanceID;
                     UnturnedChat.Say(player, Plugin.Instance.Translate("vehspawn", new object[] { Convert.ToString(i.name) }), Color.yellow);
                     UnturnedChat.Say(player, Plugin.Instance.Translate("vehcoord", new object[0]), Color.yellow);
                     player.Player.quests.replicateSetMarker(true, MyCar.transform.position, Plugin.Instance.Translate("marker", new object[0]));
@@ -338,7 +338,7 @@ namespace SDParkingCar.Events
                     i.x = player.Position.x;
                     i.y = player.Position.y;
                     i.z = player.Position.z;
-                    i._isActive = true;
+                    i._isActive = MyCar.instanceID;
                     UnturnedChat.Say(player, Plugin.Instance.Translate("vehspawn", new object[] { Convert.ToString(i.name) }), Color.yellow);
                     component.ActiveCar = MyCar.instanceID;
                     component.ActiveCarID = i.id;

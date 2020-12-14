@@ -83,7 +83,7 @@ namespace SDParkingCar
                         {
                             if (i.id == Convert.ToInt32(command[1]))
                             {
-                                if (i._isActive == false)
+                                if (i._isActive == uint.MaxValue)
                                 {
                                     IsHaveCar = true;
                                     Events.EventCars.RemoveVehicle(player);
@@ -147,7 +147,7 @@ namespace SDParkingCar
                                 {
                                     if (player.Experience >= Plugin.Instance.Configuration.Instance.costtp)
                                     {
-                                        if (i._isActive == false)
+                                        if (i._isActive == uint.MaxValue)
                                         {
                                             player.Experience = player.Experience - (uint)Plugin.Instance.Configuration.Instance.costtp;
                                             IsHaveCar = true;
@@ -172,7 +172,7 @@ namespace SDParkingCar
                                 {
                                     if (Uconomy.Instance.Database.GetBalance(player.CSteamID.m_SteamID.ToString()) >= (decimal)Plugin.Instance.Configuration.Instance.costtp)
                                     {
-                                        if (i._isActive == false)
+                                        if (i._isActive == uint.MaxValue)
                                         {
                                             Uconomy.Instance.Database.IncreaseBalance(player.CSteamID.m_SteamID.ToString(), -(decimal)Plugin.Instance.Configuration.Instance.costtp);
                                             IsHaveCar = true;
@@ -339,7 +339,7 @@ namespace SDParkingCar
                                     Gas = mycar.fuel,
                                     Battery = mycar.batteryCharge,
                                     _isTires = true,
-                                    _isActive = true,
+                                    _isActive = mycar.instanceID,
                                 };
                                 component.MyCars.Add(NewCar);
                                 UnturnedChat.Say(player, Plugin.Instance.Translate("successclaim", new object[0]), Color.yellow);

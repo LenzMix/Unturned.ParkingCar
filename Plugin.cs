@@ -187,7 +187,7 @@ namespace SDParkingCar
                         Gas = vehicle.fuel,
                         Battery = vehicle.batteryCharge,
                         _isTires = true,
-                        _isActive = true,
+                        _isActive = vehicle.instanceID,
                         name = vehicle.asset.name,
                     };
                     component.MyCars.Add(NewCar);
@@ -259,14 +259,14 @@ namespace SDParkingCar
             Database.GetCars(player);
             foreach (CarInfo i in component.MyCars)
             {
-                if (i._isActive == true)
+                if (i._isActive != uint.MaxValue)
                 {
                     if (component.ActiveCar == 0)
                     {
                         SDParkingCar.Events.EventCars.SpawnVehicle(player, i.id);
                     }
                     else
-                        i._isActive = false;
+                        i._isActive = uint.MaxValue;
                 }
             }
         }
@@ -301,7 +301,7 @@ namespace SDParkingCar
             public ushort Gas;
             public ushort Battery;
             public bool _isTires;
-            public bool _isActive;
+            public uint _isActive;
             public string name;
         }
 

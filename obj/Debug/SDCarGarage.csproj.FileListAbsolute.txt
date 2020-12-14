@@ -1,0 +1,15 @@
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\SDCarGarage.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\SDCarGarage.pdb
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\Assembly-CSharp.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\MySql.Data.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\Rocket.API.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\Rocket.Core.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\Rocket.Unturned.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\UnityEngine.dll
+C:\Users\lenzm\source\repos\SDCarGarage\bin\Debug\UnityEngine.PhysicsModule.dll
+C:\Users\lenzm\source\repos\SDCarGarage\obj\Debug\SDCarGarage.csprojAssemblyReference.cache
+C:\Users\lenzm\source\repos\SDCarGarage\obj\Debug\SDCarGarage.csproj.CopyComplete
+C:\Users\lenzm\source\repos\SDCarGarage\obj\Debug\SDCarGarage.dll
+C:\Users\lenzm\source\repos\SDCarGarage\obj\Debug\SDCarGarage.pdb
